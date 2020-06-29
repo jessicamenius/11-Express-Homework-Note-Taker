@@ -4,15 +4,14 @@ const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-// app.use(express.static("./client"));
+app.use(express.static("./client"));
 
 const apiRoutes = require("./routes/api-routes");
 app.use(apiRoutes);
 
-// const clientRoutes = require("./routes/client-routes");
-// app.use(clientRoutes);
+const clientRoutes = require("./routes/client-routes");
 
-// const dbRoutes = require("./routes/db-routes");
-// app.use(dbRoutes);
+const dbRoutes = require("./routes/db-routes");
+app.use(dbRoutes);
 
 app.listen(PORT, () => console.log(`listening at: http://localhost:${PORT}`));

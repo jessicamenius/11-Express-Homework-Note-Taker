@@ -8,7 +8,7 @@ router.get("/api", (req, res) => {
 
 router.get("/api/all", (req, res) => {
   res.json({ msg: "success" });
-  fs.readFile("data.json", "utf8", (err, data) => {
+  fs.readFile("db.json", "utf8", (err, data) => {
     if (err) throw err;
     data = JSON.parse(data);
     res.send(data);
