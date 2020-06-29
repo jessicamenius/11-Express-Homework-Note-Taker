@@ -12,4 +12,7 @@ app.use(apiRoutes);
 const clientRoutes = require("./routes/client-routes");
 app.use(clientRoutes);
 
+const dbRoutes = require("./routes/db-routes");
+app.use(dbRoutes);
+
 app.listen(PORT, () => console.log(`listening at: http://localhost:${PORT}`));
