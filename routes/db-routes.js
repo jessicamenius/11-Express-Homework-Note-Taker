@@ -1,6 +1,5 @@
 const express = require("express");
 const router = express.Router();
-const fs = require("fs");
 
 router.post("/api", (req, res) => {
   console.log(req.body);
