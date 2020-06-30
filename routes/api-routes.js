@@ -31,7 +31,6 @@ router.delete("/api/notes/:id", (req, res) => {
   let note = fs.readFileSync("./db/db.json");
   note = JSON.parse(note);
   const id = req.params.id;
-  notes.forEach;
 });
 
 module.exports = router;
