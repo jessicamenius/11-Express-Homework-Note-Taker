@@ -8,7 +8,7 @@ let notes = [];
 //   res.json({ msg: "success" });
 // });
 
-router.get("/api/notes", (req, res) => {
+router.get("/notes", (req, res) => {
   fs.readFile("./db/db.json", "utf8", (err, data) => {
     if (err) throw err;
     data = JSON.parse(data);
@@ -16,7 +16,7 @@ router.get("/api/notes", (req, res) => {
   });
 });
 
-router.post("/api/notes", (req, res) => {
+router.post("/notes", (req, res) => {
   let note = fs.readFileSync("./db/db.json", "utf8");
   note = JSON.parse(note);
   let id = note.length;
@@ -27,7 +27,7 @@ router.post("/api/notes", (req, res) => {
   res.send({ msg: "success" });
 });
 
-router.delete("/api/notes/:id", (req, res) => {
+router.delete("/notes/:id", (req, res) => {
   let note = fs.readFileSync("./db/db.json");
   note = JSON.parse(note);
   const id = req.params.id;
