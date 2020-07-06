@@ -2,13 +2,11 @@ const express = require("express");
 const router = express.Router();
 const fs = require("fs");
 
-let notes = [];
-
 // router.get("/api", (req, res) => {
-//   res.json({ msg: "success" });
+//   res.json({ msg: "success!" });
 // });
 
-router.get("/notes", (req, res) => {
+router.get("/api/notes", (req, res) => {
   fs.readFile("./db/db.json", "utf8", (err, data) => {
     if (err) throw err;
     data = JSON.parse(data);
@@ -16,7 +14,7 @@ router.get("/notes", (req, res) => {
   });
 });
 
-router.post("/notes", (req, res) => {
+router.post("/api/notes", (req, res) => {
   let note = fs.readFileSync("./db/db.json", "utf8");
   note = JSON.parse(note);
   let id = note.length;
